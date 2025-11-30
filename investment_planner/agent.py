@@ -1,5 +1,6 @@
-from google.adk.agents import SequentialAgent, ParallelAgent, LlmAgent
+from google.adk.agents import LlmAgent, ParallelAgent, SequentialAgent
 from google.adk.models.google_llm import Gemini
+
 from investment_planner.agents import (
     spending_pattern_agent,
     savings_emergency_agent,

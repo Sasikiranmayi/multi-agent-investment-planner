@@ -1,5 +1,6 @@
 from google.adk.agents import LlmAgent
 from google.adk.models.google_llm import Gemini
+
 from investment_planner.observability.logging_config import logger
 
 
@@ -7,10 +8,10 @@ goal_collection_agent = LlmAgent(
     name="GoalCollectionAgent",
     model=Gemini(model="gemini-2.0-flash"),
     instruction="""
-      You are the Goal Collection Agent in a multi-agent investment planner.
+      You are the Goal Collection Agent in a multi-agent investment planner system.
 
       Your responsibilities:
-      1. If the user has **not yet clearly described any goals**, do NOT invent any goals.
+      1. If the user has **not yet clearly described any goals**, DO NOT invent any goals.
         - Instead, ask them a few clear questions like:
           - "What are your top 2-4 financial goals?" (examples: buy a house, kids education, retirement, travel, emergency fund)
           - "For each goal, roughly how much money do you need?"
@@ -18,6 +19,7 @@ goal_collection_agent = LlmAgent(
 
       2. Once the user has provided their goals, you MUST:
         - Summarise them into a concise internal structure.
+
         REQUIRED OUTPUT FORMAT (strict):
 
         ### 🎯 Your Investment Goals

@@ -85,44 +85,36 @@ This starts the system using ADK’s `Runner` with full logs and console-based i
 multi-agent-investment-planner/
 │
 ├── investment_planner/
-│   ├── agents/
-│   │   ├── user_profile_agent.py        # Root profile intake logic (if needed)
+│   ├── agents/     
 │   │   ├── spending_pattern_agent.py    # Expense + surplus analysis
-│   │   ├── savings_emergency_agent.py   # Savings + emergency fund computation
+│   │   ├── savings_agent.py             # Savings + emergency fund computation
 │   │   ├── goal_collection_agent.py     # Short / Medium / Long-term goals
 │   │   ├── risk_profile_agent.py        # Risk comfort + risk category
 │   │   ├── market_research_agent.py     # Market condition insights
-│   │   ├── projection_loop_agent.py      # Loop agent for long-term projections
+│   │   ├── projection_agent.py          # Loop agent for long-term projections
 │   │   ├── summary_agent.py             # Consolidated investment plan
 │   │   └── __init__.py
 │   │
 │   ├── tools/
-│   │   ├── calculators.py               # SIP FV, compound interest, surplus logic
-│   │   ├── financial_utils.py           # Formatting, helper functions
-│   │   └── __init__.py
+│   │   └── calculators.py               # SIP FV, compound interest, surplus logic
 │   │
-│   ├── orchestrator/
-│   │   └── agent.py                     # Root wiring: Sequential + Parallel agents
+│   ├── agent.py                         # Root wiring: Sequential + Parallel agents
 │   │
 │   ├── observability/
-│   │   ├── logging_config.py            # Logging + metrics + tracing setup
-│   │   └── __init__.py
+│   │   └── logging_config.py            # Logging + metrics + tracing setup
 │   │
-│   ├── tests/
-│   │   ├── test_spending_agent.py
-│   │   ├── test_savings_agent.py
-│   │   ├── test_goal_agent.py
-│   │   ├── test_risk_agent.py
-│   │   ├── test_market_agent.py
-│   │   ├── test_projection_agent.py
-│   │   └── __init__.py
-│   │
-│   ├── __init__.py
-│   └── config.py
+│   └── tests/
+│       ├── test_spending_agent.py
+│       ├── test_savings_agent.py
+│       ├── test_goal_agent.py
+│       ├── test_risk_agent.py
+│       ├── test_market_agent.py
+│       ├── test_projection_agent.py
+│       └── __init__.py
 │
 ├── main.py
 ├── requirements.txt
-├── .env.example
+├── .env
 └── README.md
 ```
 

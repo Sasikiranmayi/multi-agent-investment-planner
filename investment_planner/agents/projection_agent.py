@@ -1,5 +1,6 @@
 from google.adk.agents import LlmAgent, LoopAgent
 from google.adk.models.google_llm import Gemini
+
 from investment_planner.observability.logging_config import logger
 from investment_planner.tools.calculators import (
     project_goal_tool,

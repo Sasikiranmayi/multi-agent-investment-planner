@@ -7,7 +7,6 @@ from .projection_agent import projection_loop_agent
 from .summary_agent import summary_agent
 
 __all__ = [
-    "user_profile_agent",
     "spending_pattern_agent",
     "savings_emergency_agent",
     "goal_collection_agent",

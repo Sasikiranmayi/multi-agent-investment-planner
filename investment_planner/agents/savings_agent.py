@@ -1,5 +1,6 @@
 from google.adk.agents import LlmAgent
 from google.adk.models.google_llm import Gemini
+
 from investment_planner.observability.logging_config import logger
 from investment_planner.tools.calculators import emergency_fund_tool, savings_rate_tool
 
@@ -60,9 +61,6 @@ savings_emergency_agent = LlmAgent(
         - short-term savings  
         - medium-term savings  
         - long-term investment contributions  
-
-        DO NOT use JSON.
-        DO NOT use numbered arrays.
 
         #### 5. Early Warning Indicators
         Provide 3-5 bullet points indicating
