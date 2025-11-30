@@ -129,15 +129,14 @@ multi-agent-investment-planner/
 ```mermaid
 flowchart TD
     A[User Input] --> B[Root LlmAgent]
-    B --> C[Planner Sequence Agent]
+    B --> C[Pipeline Agent]
     C --> D[Spending Pattern]
     C --> E[Savings & Emergency Fund]
     C --> F[Goals & Risk Phase]
     F --> G[Goal Collection]
     F --> H[Risk Profile]
-    C --> I[Market + Projections]
-    I --> J[Market Research]
-    I --> K[Projection Loop]
+    C --> I[Market Research]
+    C --> J[Projection Loop]
     C --> L[Summary Agent]
     L --> M[Final Plan Output]
 ```
@@ -158,7 +157,8 @@ Executes each domain step in strict order:
 1. **Spending Pattern Agent**  
 2. **Savings & Emergency Fund Agent**  
 3. **Parallel Goals & Risk Agents**  
-4. **Sequential Market Research + Projection Loop**  
+4. **Sequential Market Research**
+5. **Projection Loop**  
 5. **Summary Agent**
 
 ### **Parallel Agents**
