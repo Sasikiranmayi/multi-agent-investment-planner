@@ -1,4 +1,5 @@
 # 🧠 Multi-Agent Investment Planner  
+![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![Kaggle](https://img.shields.io/badge/Kaggle-Competition-blue?logo=kaggle) ![Google ADK](https://img.shields.io/badge/Google-ADK-orange?logo=google)
 A fully orchestrated, multi-agent financial planning system powered by **Google ADK** and **Gemini**, designed to help users build a complete, personalized investment plan using intelligent agent collaboration.
 
 ---
