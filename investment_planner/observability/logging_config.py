@@ -1,6 +1,5 @@
 import logging
 import os
-from logging.handlers import RotatingFileHandler
 
 # Log directory
 LOG_DIR = "logs"
@@ -15,6 +14,6 @@ logging.basicConfig(
 
 # Create logger
 logger = logging.getLogger("investment_planner")
-# logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.DEBUG)
 
 logger.debug("Logger initialized successfully.")

@@ -1,5 +1,6 @@
 from google.adk.agents import LlmAgent
 from google.adk.models.google_llm import Gemini
+
 from investment_planner.observability.logging_config import logger
 from investment_planner.tools.calculators import savings_rate_tool
 
@@ -9,15 +10,9 @@ spending_pattern_agent = LlmAgent(
     instruction="""
       You are the Spending Pattern Agent.
 
-      You receive the state variable `user_profile` which is a JSON object
-      with user income, expenses, debts and goals.
-      You MUST read the user’s financial state only from:
-          - monthly_income
-          - monthly_expenses
-
-        If either of these is missing, do NOT invent values.
-        You will not be called until they are present.
-      1) Read the JSON from {user_profile}.
+      You receive the state variable `user_profile` with user income, expenses, debts and goals.
+      
+      1) Read the input from {user_profile}.
       2) Use savings_rate_tool(income=<value>, expenses=<value>) to compute the savings ratio.
       3) Categorise expenses:
         - Needs (essentials)

@@ -1,5 +1,5 @@
-import math
 from google.adk.tools import FunctionTool
+
 from investment_planner.observability.logging_config import logger
 
 # ------------------------------
