@@ -1,5 +1,6 @@
 # 🧠 Multi-Agent Investment Planner  
 ![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![Kaggle](https://img.shields.io/badge/Kaggle-Competition-blue?logo=kaggle) ![Google ADK](https://img.shields.io/badge/Google-ADK-orange?logo=google)
+
 A fully orchestrated, multi-agent financial planning system powered by **Google ADK** and **Gemini**, designed to help users build a complete, personalized investment plan using intelligent agent collaboration.
 
 ---
@@ -102,7 +103,7 @@ multi-agent-investment-planner/
 │   ├── agent.py                         # Root wiring: Sequential + Parallel agents
 │   │
 │   ├── observability/
-│   │   └── logging_config.py            # Logging + metrics + tracing setup
+│   │   └── logging_config.py            # Logging setup
 │   │
 │   └── tests/
 │       ├── test_spending_agent.py
@@ -183,32 +184,32 @@ GoalsAndRiskPhase:
 
 ### **1. FunctionTools**
 
-#### `calculate_compound_interest`
+#### `compound_interest`
 Used inside projection loop:
 
 ```python
-FunctionTool(calculate_compound_interest)
+FunctionTool(compound_interest)
 ```
 
-#### `calculate_sip_future_value`
+#### `sip_growth`
 Used for investment goal fulfillment:
 
 ```python
-FunctionTool(calculate_sip_future_value)
+FunctionTool(sip_growth)
 ```
 
-#### `categorize_expenses`
+#### `savings_rate`
 Used inside Spending Pattern:
 
 ```python
-FunctionTool(categorize_expenses)
+FunctionTool(savings_rate)
 ```
 
-#### `emergency_fund_required`
+#### `calculate_emergency_fund`
 Used inside Savings Plan:
 
 ```python
-FunctionTool(emergency_fund_required)
+FunctionTool(calculate_emergency_fund)
 ```
 
 ---

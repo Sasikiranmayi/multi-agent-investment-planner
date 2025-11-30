@@ -20,21 +20,14 @@ goals_and_risk_phase_agent = ParallelAgent(
     ],
 )
 
-research_and_project_agent = SequentialAgent(
-    name="ResearchAndProjectionPhase",
-    sub_agents=[
-        market_research_agent,
-        projection_loop_agent,
-    ],
-)
-
-planner_agent = SequentialAgent(
-    name="InvestmentPlannerSystem",
+pipeline_agent = SequentialAgent(
+    name="PlanningPipelineAgent",
     sub_agents=[
         spending_pattern_agent,
         savings_emergency_agent,
         goals_and_risk_phase_agent,
-        research_and_project_agent,
+        market_research_agent,
+        projection_loop_agent,
         summary_agent
     ],
 )
@@ -88,7 +81,7 @@ root_agent = LlmAgent(
     """,
     output_key="user_profile",
     sub_agents=[
-        planner_agent
+        pipeline_agent
     ],
 )
 
