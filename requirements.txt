@@ -1,5 +1,5 @@
 google-adk==1.18.0
+google-adk[eval]
 python-dotenv
-pydantic
 pytest
 pytest-asyncio

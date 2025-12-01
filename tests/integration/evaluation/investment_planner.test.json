@@ -1,0 +1,40 @@
+{
+    "eval_set_id": "investment_planner_root_set",
+    "name": "Root Agent Basic Greeting Test",
+    "description": "Tests whether the root investment planner agent responds correctly when a user asks to plan their investments.",
+    "eval_cases": [
+        {
+            "eval_id": "root_agent_case_01",
+            "conversation": [
+                {
+                    "invocation_id": "9c2a4e88-5f49-4f72-9e61-a7374a11c001",
+                    "user_content": {
+                        "parts": [
+                            {
+                                "text": "Hi, Plan my investments"
+                            }
+                        ],
+                        "role": "user"
+                    },
+                    "final_response": {
+                        "parts": [
+                            {
+                                "text": "Okay! I can help you with that. But first, I need to gather some information to create a personalized investment plan for you. Let's start with your income and expenses. What is your monthly income and your average monthly expenses? Do you have any irregular income or bonuses? If yes, how much approximately do you receive from these sources?"
+                            }
+                        ],
+                        "role": "model"
+                    },
+                    "intermediate_data": {
+                        "tool_uses": [],
+                        "intermediate_responses": []
+                    }
+                }
+            ],
+            "session_input": {
+                "app_name": "investment_planner",
+                "user_id": "test_user",
+                "state": {}
+            }
+        }
+    ]
+}
