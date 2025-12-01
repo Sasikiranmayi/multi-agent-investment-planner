@@ -101,18 +101,17 @@ multi-agent-investment-planner/
 │   │   └── calculators.py               # SIP FV, compound interest, surplus logic
 │   │
 │   ├── agent.py                         # Root wiring: Sequential + Parallel agents
+│   ├── __init__.py                       
 │   │
 │   ├── observability/
 │   │   └── logging_config.py            # Logging setup
 │   │
 │   └── tests/
-│       ├── test_spending_agent.py
-│       ├── test_savings_agent.py
-│       ├── test_goal_agent.py
-│       ├── test_risk_agent.py
-│       ├── test_market_agent.py
-│       ├── test_projection_agent.py
-│       └── __init__.py
+│       ├── integration/
+│       │   └── evaluation/
+│       │       ├── investment_planner.test.json
+│       │       └── test_config.json
+│       └── test_investment_planner.py
 │
 ├── main.py
 ├── requirements.txt
@@ -227,6 +226,7 @@ The project includes:
 - Agent execution breadcrumbs
 
 ### **Tracing (optional)**
+Tracing can be viewed in adk web UI or
 You can enable:
 
 ```python
@@ -249,16 +249,10 @@ The system is observability-ready for Kaggle or production.
 
 Tests are located in `investment_planner/tests/`
 
-Run all tests:
+Run tests with evalset:
 
 ```bash
-pytest -q
-```
-
-Run a specific test file:
-
-```bash
-pytest tests/test_goal_agent.py -q
+pytest tests/test_investment_planner.py -q
 ```
 
 ---
