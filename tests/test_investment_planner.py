@@ -1,8 +1,14 @@
+import os
 import pathlib
 import pytest
+import sys
 
 from dotenv import load_dotenv
 from google.adk.evaluation.agent_evaluator import AgentEvaluator
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -13,8 +19,8 @@ def load_env():
 @pytest.mark.asyncio
 async def test_agent():
     eval_path = (
-        pathlib.Path(__file__).parent.parent
-        / "tests/integration/evaluation/"
+        pathlib.Path(__file__).parent
+        / "integration/evaluation/"
     )
 
     assert eval_path.exists()
